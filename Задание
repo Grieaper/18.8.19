@@ -1,0 +1,15 @@
+tickets_amount = int(input('Введите количество билетов: '))
+total_cost = 0
+free_tickets = 0
+for i in range(tickets_amount):
+    age = int(input('Введите возраст посетителя: '))
+    if age < 18:
+        free_tickets += 1
+    elif age >= 18 and age < 25:
+        total_cost += 990
+    else:
+        total_cost += 1390
+if tickets_amount > 3:
+    total_cost = total_cost - (total_cost * 0.1)
+print(f'Количество бесплатных билетов: {free_tickets}')
+print(f'Общая стоимость билетов: {total_cost} руб.')
